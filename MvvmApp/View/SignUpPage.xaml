@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MvvmApp.View.SignUpPage" Title="Registro" xmlns:ViewModel="clr-namespace:MvvmApp.ViewModel">
+    <ContentPage.BindingContext>
+       <ViewModel:SignUpViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Registrar" Command="{Binding SignUpCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <TableView Intent="Form" HasUnevenRows="true">
+            <TableSection Title="Datos de la cuenta">
+                <ViewCell>
+                    <Entry Text="{Binding User}" Placeholder="Correo electrónico" Keyboard="Email" />
+                </ViewCell>
+                <ViewCell>
+                    <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="true" />
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="Información del usuario">
+                <ViewCell>
+                    <Entry Text="{Binding Name}" Placeholder="Nombre" />
+                </ViewCell>
+                <ViewCell>
+                    <Entry Text="{Binding Address}" Placeholder="Dirección" />
+                </ViewCell>
+                <ViewCell>
+                    <Entry Text="{Binding PhoneNumber}" Placeholder="Telefóno" Keyboard="Telephone" />
+                </ViewCell>
+                <ViewCell>
+                    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Center" />
+                </ViewCell>
+            </TableSection>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

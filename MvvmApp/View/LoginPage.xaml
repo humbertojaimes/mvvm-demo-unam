@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MvvmApp.View.LoginPage"
+    xmlns:ViewModel="clr-namespace:MvvmApp.ViewModel" Title="Inicio">
+    <ContentPage.BindingContext>
+       <ViewModel:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout  Padding="20,100,20,0">
+            <Label Text="Inicio de sesión"
+                HorizontalOptions="Center" BackgroundColor="Aqua"/>
+            <Entry Text="{Binding User}" Placeholder="Usuario o email" Keyboard="Email" />
+            <Entry Text="{Binding Password}" Placeholder="Contraseña" IsPassword="true" />
+            <Label Text="{Binding User}" />
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                IsRunning="{Binding IsBusy}"
+                HorizontalOptions="Center"/>
+            <Button Text="Iniciar sesión"
+                Command="{Binding LoginCommand}"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

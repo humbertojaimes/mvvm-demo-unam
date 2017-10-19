@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MvvmApp.View.LoginPage"
-    xmlns:ViewModel="clr-namespace:MvvmApp.ViewModel" Title="Inicio">
+    xmlns:ViewModel="clr-namespace:MvvmApp.ViewModel"
+    Title="Inicio"
+    Icon="login.png">
     <ContentPage.BindingContext>
        <ViewModel:LoginViewModel />
     </ContentPage.BindingContext>

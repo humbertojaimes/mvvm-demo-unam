@@ -126,6 +126,9 @@
     <BundleResource Include="Resources\login.png" />
     <BundleResource Include="Resources\login%402x.png" />
     <BundleResource Include="Resources\login%403x.png" />
+    <BundleResource Include="Resources\signup.png" />
+    <BundleResource Include="Resources\signup%402x.png" />
+    <BundleResource Include="Resources\signup%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets')" />

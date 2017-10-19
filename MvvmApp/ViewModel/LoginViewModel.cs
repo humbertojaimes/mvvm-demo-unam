@@ -3,23 +3,14 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmApp.Model;
 using MvvmApp.View;
 using Xamarin.Forms;
 
 namespace MvvmApp.ViewModel
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : ObservableObject
     {
-
-       
-
-        public event PropertyChangedEventHandler PropertyChanged
-            = delegate { };
-
-        public void OnPropertyChanged([CallerMemberName]string name = "")
-        {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
         private string user;
 
@@ -80,10 +71,10 @@ namespace MvvmApp.ViewModel
             {
                 Navigation = Application.Current.MainPage.Navigation;
                 IsBusy = true;
-                await Task.Delay(3000);
+                await Task.Delay(1000);
                 await Application.Current.MainPage.DisplayAlert
                  ("Bienvenido!!", $"Usuario: {user}","Ok");
-                await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new DirectoryPage());
                 IsBusy = false;
             }
         }

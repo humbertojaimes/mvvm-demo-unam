@@ -132,6 +132,22 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\correct.png" />
+    <AndroidResource Include="Resources\drawable\failed.png" />
+    <AndroidResource Include="Resources\drawable\login.png" />
+    <AndroidResource Include="Resources\drawable\signup.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\correct.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\failed.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\login.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\signup.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\correct.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\failed.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\login.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\signup.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\correct.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\failed.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\login.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\signup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />

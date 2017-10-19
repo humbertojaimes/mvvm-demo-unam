@@ -2,22 +2,14 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using MvvmApp.Model;
+using MvvmApp.Model.Services;
 using Xamarin.Forms;
 
 namespace MvvmApp.ViewModel
 {
-    public class SignUpViewModel: INotifyPropertyChanged
+    public class SignUpViewModel: ObservableObject
     {
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged
-            = delegate { };
-
-        public void OnPropertyChanged([CallerMemberName]string name = "")
-        {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
         private string user;
 
@@ -117,9 +109,23 @@ namespace MvvmApp.ViewModel
             {
                 Navigation = Application.Current.MainPage.Navigation;
                 IsBusy = true;
-                await Task.Delay(3000);
+
+                Account newAccount = new Account()
+                {
+                    Name = this.Name,
+                    Email = this.User,
+                    PhoneNumber = this.PhoneNumber,
+                    Address = this.Address,
+                    Password = this.Password,
+                    ConfirmPassword = this.Password
+                };
+
+                AccountService accountService = new AccountService();
+
+                 bool result = await accountService.RegisterAccount(newAccount);
+
                 await Application.Current.MainPage.DisplayAlert
-                 ("Bienvenido!!", $"Usuario: {user}", "Ok");
+                                 ("Registro", $"Usuario: {user} Registrado: {result}", "Ok");
                 //await Navigation.PushAsync(new MainPage());
                 IsBusy = false;
             }

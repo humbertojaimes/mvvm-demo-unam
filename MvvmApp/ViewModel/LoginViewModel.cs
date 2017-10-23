@@ -74,7 +74,7 @@ namespace MvvmApp.ViewModel
                 await Task.Delay(1000);
                 await Application.Current.MainPage.DisplayAlert
                  ("Bienvenido!!", $"Usuario: {user}","Ok");
-                await Navigation.PushAsync(new DirectoryPage());
+                await Navigation.PushAsync(new PhotoPage());
                 IsBusy = false;
             }
         }

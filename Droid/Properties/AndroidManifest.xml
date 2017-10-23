@@ -2,5 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.hjr.MvvmApp">
 	<uses-sdk android:minSdkVersion="21" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="MvvmApp"></application>
+	<application android:label="MvvmApp">
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.hjr.MvvmApp.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths">
+			</meta-data>
+		</provider>
+	</application>
 </manifest>

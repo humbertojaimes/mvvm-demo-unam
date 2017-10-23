@@ -1,4 +1,6 @@
 ﻿using System;
+using MvvmApp.Model.Interfaces;
+
 namespace MvvmApp.Model
 {
     public enum JobPosition
@@ -10,10 +12,12 @@ namespace MvvmApp.Model
         Developer
     }
 
-    public class Employee : ObservableObject
+    public class Employee 
+        : ObservableObject, IKeyObject
     {
       
-        public string Key
+        [SQLite.PrimaryKey]
+        public string Id
         {
             get;
             set;
@@ -62,7 +66,7 @@ namespace MvvmApp.Model
         public Employee(string name, byte[] photo, JobPosition position, string email)
         {
             Name = name;
-            Key = name;
+            Id = name;
             Photo = photo;
             Position = position;
             Email = email;
